@@ -7,7 +7,7 @@ def ask_option():
     main_option = {
         "type":"list",
         "name":"main_options",
-        "message":"Expense Tracker v0.1",
+        "message":"Expense Tracker v1",
         "choices": ["New Expense","Show Status","New User","Exit"]
     }
     option = prompt(main_option)
