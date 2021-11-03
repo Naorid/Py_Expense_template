@@ -80,7 +80,6 @@ def overwrite_expense(expenses):
 
         writer.writeheader()
         for row in expenses:
-            print(row)
             writer.writerow(row)
 
 def parse_involved_list(x):
@@ -135,7 +134,7 @@ def status_report():
                     "spender": row['spender'],
                     "debt": debt
                 }
-            user_reimbursements.append(obj)
+                user_reimbursements.append(obj)
         
         # Print status
         status_question[0]['choices'] = []
@@ -157,4 +156,6 @@ def status_report():
         
         for selected in infos['payed']:
             selected_splitted = selected.split(' ')
+            if 'nothing' in selected_splitted:
+                continue
             pay_debt(selected_splitted[0], selected_splitted[-1])
